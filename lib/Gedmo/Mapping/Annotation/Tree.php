@@ -26,4 +26,7 @@ final class Tree extends Annotation
 
     /** @var string $identifierMethod */
     public $identifierMethod;
+
+    /** @var string $pathSource */
+    public $pathSource;
 }

@@ -103,6 +103,11 @@ class Annotation extends AbstractAnnotationDriver
             if ($config['locking_timeout'] < 1) {
                 throw new InvalidMappingException("Tree Locking Timeout must be at least of 1 second.");
             }
+
+            $pathSource = $annot->pathSource;
+            if (!is_null($pathSource)) {
+                $config['path_source'] = $pathSource;
+            }
         }
         if ($annot = $this->reader->getClassAnnotation($class, self::CLOSURE)) {
             if (!$cl = $this->getRelatedClassName($meta, $annot->class)) {
